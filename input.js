@@ -1,6 +1,7 @@
 const { UP_KEY, LEFT_KEY, DOWN_KEY, RIGHT_KEY, QUICK_CHAT1, QUICK_CHAT2 } = require('./constants');
 let connection;
 
+// set up to receive user input through terminal
 const setupInput = function(conn) {
   connection = conn;
   const stdin = process.stdin;
@@ -11,6 +12,7 @@ const setupInput = function(conn) {
   return stdin;
 };
 
+// handles user input through terminal
 const handleUserInput = function(key) {
   if (key === '\u0003') {
     process.exit();
