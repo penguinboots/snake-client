@@ -1,3 +1,4 @@
+const { UP_KEY, LEFT_KEY, DOWN_KEY, RIGHT_KEY, QUICK_CHAT1, QUICK_CHAT2 } = require('./constants');
 let connection;
 
 const setupInput = function(conn) {
@@ -14,22 +15,22 @@ const handleUserInput = function(key) {
   if (key === '\u0003') {
     process.exit();
   }
-  if (key === 'w') {
+  if (key === UP_KEY) {
     connection.write('Move: up');
   }
-  if (key === 'a') {
+  if (key === LEFT_KEY) {
     connection.write('Move: left');
   }
-  if (key === 's') {
+  if (key === DOWN_KEY) {
     connection.write('Move: down');
   }
-  if (key === 'd') {
+  if (key === RIGHT_KEY) {
     connection.write('Move: right');
   }
-  if (key === 'e') {
+  if (key === QUICK_CHAT1) {
     connection.write('Say: HELLO!');
   }
-  if (key === 'q') {
+  if (key === QUICK_CHAT2) {
     connection.write('Say: MOVE!');
   }
 };
